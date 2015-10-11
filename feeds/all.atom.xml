@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-10T13:15:00+02:00</updated><entry><title>First post</title><link href="http://piggel.in/2015/10/10/first-post/" rel="alternate"></link><updated>2015-10-10T13:15:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-10:2015/10/10/first-post/</id><summary type="html">&lt;p&gt;This is my first post on this blog. I'm using &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; and my own theme which you can find at
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-11T13:00:00+02:00</updated><entry><title>Time to look for a LastPass alternative</title><link href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/" rel="alternate"></link><updated>2015-10-11T13:00:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-11:2015/10/11/time-to-look-for-a-lastpass-alternative/</id><summary type="html">&lt;p&gt;A couple of days ago LastPass &lt;a class="reference external" href="https://blog.lastpass.com/2015/10/lastpass-joins-logmein.html/"&gt;announced&lt;/a&gt; that they
+have been acquired by the company LogMeIn. Apparently their &lt;a class="reference external" href="https://investor.logmeininc.com/about-us/investors/news/press-release-details/2015/LogMeIn-to-Acquire-Password-Management-Leader-LastPass/default.aspx"&gt;long-term goal&lt;/a&gt;
+is to merge LastPass with &lt;a class="reference external" href="https://www.meldium.com/"&gt;Meldium&lt;/a&gt; which they
+acquired last year:&lt;/p&gt;
+&lt;blockquote&gt;
+Following the close of the deal, LogMeIn plans to bring complementary
+capabilities of its early identity management investments, including those
+of Meldium, which it acquired in September 2014, into LastPass.  In the
+near-term, both the Meldium and LastPass product lines will continue to be
+supported, with longer-term plans to center around a singular identity
+management offering based on the LastPass service and brand.&lt;/blockquote&gt;
+&lt;p&gt;People on &lt;a class="reference external" href="https://news.ycombinator.com/item?id=10359491"&gt;Hacker News&lt;/a&gt; and
+&lt;a class="reference external" href="https://www.reddit.com/r/sysadmin/comments/3o3c74/logmein_to_acquire_lastpass/"&gt;Reddit&lt;/a&gt;
+are overall very upset and many are now looking for alternatives to LastPass.
+One user made a nice &lt;a class="reference external" href="https://www.reddit.com/r/sysadmin/comments/3o3c74/logmein_to_acquire_lastpass/cvtrzha"&gt;post&lt;/a&gt;
+with a list of 15 alternative services.&lt;/p&gt;
+&lt;p&gt;I very much liked LastPass and I have been a premium customer for about 5
+years.  LastPass felt like a serious, small company with one single focus which
+you could trust. I have no experience with LogMeIn, but people in the above
+mentioned comments fields seem to be afraid about the direction they might
+steer LastPass in. I think LastPass is more or less feature complete and I
+don't like that they will merge it with Meldium. Meldium gives me a bad
+feeling.&lt;/p&gt;
+&lt;p&gt;Two self-managed alternatives I have been looking at are &lt;a class="reference external" href="http://keepass.info/"&gt;KeePass&lt;/a&gt; and &lt;a class="reference external" href="http://www.passwordstore.org/"&gt;Pass&lt;/a&gt;. Both are
+open source and support Linux, Firefox and Android. However, where KeePass is a
+Windows application which has been ported to Linux with the help of Mono, Pass
+is a more &amp;quot;true&amp;quot; Linux application. I like that Pass is primarily a terminal
+application which utilizes GPG for encryption and Git for syncing.&lt;/p&gt;
+&lt;p&gt;I installed KeePass and the Firefox add-on &lt;a class="reference external" href="http://keefox.org/"&gt;KeeFox&lt;/a&gt;,
+since KeePass seems to be highly popular. However, I think KeePass feels like a
+quite bloated and heavy setup, and its GUI radiates a Windows aura which
+disgusts me.&lt;/p&gt;
+&lt;img alt="Screenshot of KeePass" class="img-responsive center-block" src="http://piggel.in/images/keepass.jpg" /&gt;
+&lt;p&gt;My next step is to give Pass and its Firefox add-on &lt;a class="reference external" href="https://github.com/jvenant/passff"&gt;passff&lt;/a&gt; a shot.&lt;/p&gt;
+</summary><category term="LastPass"></category><category term="Pass"></category><category term="KeePass"></category><category term="password manager"></category></entry><entry><title>First post</title><link href="http://piggel.in/2015/10/10/first-post/" rel="alternate"></link><updated>2015-10-10T13:15:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-10:2015/10/10/first-post/</id><summary type="html">&lt;p&gt;This is my first post on this blog. I'm using &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; and my own theme which you can find at
 &lt;a class="reference external" href="https://github.com/matachi/pelican-piggelin"&gt;https://github.com/matachi/pelican-piggelin&lt;/a&gt;. I will eventually make the
 theme somewhat prettier. The source code to the blog itself (articles, etc) can
 be found at &lt;a class="reference external" href="https://github.com/matachi/piggel.in"&gt;https://github.com/matachi/piggel.in&lt;/a&gt;.&lt;/p&gt;
