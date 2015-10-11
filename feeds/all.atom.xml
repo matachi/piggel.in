@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-10T13:15:00+02:00</updated><entry><title>First post</title><link href="http://piggel.in/2015/10/10/first-post/" rel="alternate"></link><updated>2015-10-10T13:15:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-10:2015/10/10/first-post/</id><summary type="html">&lt;p&gt;This is my first post on this blog. I'm using &lt;a class="reference external" href="http://getpelican.com"&gt;Pelican&lt;/a&gt; and my own theme which you can find at
+&lt;a class="reference external" href="https://github.com/matachi/pelican-piggelin"&gt;https://github.com/matachi/pelican-piggelin&lt;/a&gt;. I will eventually make the
+theme somewhat prettier. The source code to the blog itself (articles, etc) can
+be found at &lt;a class="reference external" href="https://github.com/matachi/piggel.in"&gt;https://github.com/matachi/piggel.in&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="Pelican"></category></entry></feed>
