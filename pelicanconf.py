@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 ARTICLE_PATHS = ['articles']
-STATIC_PATHS = ['static']
+STATIC_PATHS = ['images']
 USE_FOLDER_AS_CATEGORY = False
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
