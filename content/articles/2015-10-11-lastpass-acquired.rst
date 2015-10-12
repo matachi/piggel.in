@@ -4,6 +4,7 @@ Time to look for a LastPass alternative
 
 :date: 2015-10-11 13:00
 :tags: LastPass, Pass, KeePass, password manager
+:lang: en
 
 A couple of days ago LastPass `announced
 <https://blog.lastpass.com/2015/10/lastpass-joins-logmein.html/>`_ that they
@@ -17,7 +18,7 @@ acquired last year:
     of Meldium, which it acquired in September 2014, into LastPass.  In the
     near-term, both the Meldium and LastPass product lines will continue to be
     supported, with longer-term plans to center around a singular identity
-    management offering based on the LastPass service and brand. 
+    management offering based on the LastPass service and brand.
 
 People on `Hacker News <https://news.ycombinator.com/item?id=10359491>`_ and
 `Reddit

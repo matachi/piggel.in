@@ -1,3 +1,6 @@
 [submodule "pelican-piggelin"]
 	path = pelican-piggelin
 	url = git@github.com:matachi/pelican-piggelin.git
+[submodule "pelican-plugins"]
+	path = pelican-plugins
+	url = git@github.com:getpelican/pelican-plugins.git

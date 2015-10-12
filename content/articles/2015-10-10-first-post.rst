@@ -4,6 +4,7 @@ First post
 
 :date: 2015-10-10 13:15
 :tags: Pelican
+:lang: en
 
 This is my first post on this blog. I'm using `Pelican
 <http://getpelican.com>`_ and my own theme which you can find at
