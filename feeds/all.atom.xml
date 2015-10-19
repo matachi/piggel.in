@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-11T13:00:00+02:00</updated><entry><title>Time to look for a LastPass alternative</title><link href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/" rel="alternate"></link><updated>2015-10-11T13:00:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-11:2015/10/11/time-to-look-for-a-lastpass-alternative/</id><summary type="html">&lt;p&gt;A couple of days ago LastPass &lt;a class="reference external" href="https://blog.lastpass.com/2015/10/lastpass-joins-logmein.html/"&gt;announced&lt;/a&gt; that they
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-19T11:20:00+02:00</updated><entry><title>Installed pass and passff</title><link href="http://piggel.in/2015/10/19/installed-pass-and-passff/" rel="alternate"></link><updated>2015-10-19T11:20:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-19:2015/10/19/installed-pass-and-passff/</id><summary type="html">&lt;p&gt;The other day &lt;a class="reference external" href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/"&gt;I wrote&lt;/a&gt; that I
+were looking at LastPass alternatives. At that time I had given KeyPass a shot,
+but now I have had time to try &lt;a class="reference external" href="http://www.passwordstore.org/"&gt;pass&lt;/a&gt; and its
+Firefox extension &lt;a class="reference external" href="https://github.com/jvenant/passff"&gt;passff&lt;/a&gt;. Compared to
+LastPass and KeyPass, it's an extremely lightweight setup, which I really like.&lt;/p&gt;
+&lt;p&gt;Exporting your passwords from LastPass is very easy:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Visit &lt;a class="reference external" href="https://lastpass.com/?&amp;amp;ac=1"&gt;https://lastpass.com/?&amp;amp;ac=1&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Expand &lt;em&gt;Tools&lt;/em&gt; in the left sidebar.&lt;/li&gt;
+&lt;li&gt;Expand &lt;em&gt;Advanced tools&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Select &lt;em&gt;Export&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;A new window opens with your passwords as a .csv table.&lt;/li&gt;
+&lt;li&gt;Hit &lt;em&gt;Ctrl+S&lt;/em&gt; to save it to your HDD.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I know that there's a &lt;a class="reference external" href="http://git.zx2c4.com/password-store/tree/contrib/importers/lastpass2pass.rb"&gt;Ruby script&lt;/a&gt;
+for importing LastPass passwords into pass. However, I got an error when I
+tried to run it and I'm not fluent with Ruby. So rather than trying to
+understand the script, I wrote a short Python script that goes through the
+password list and imports them into pass according to my own preferences:&lt;/p&gt;
+&lt;script src="https://gist.github.com/matachi/f52257bfee070023b134.js"&gt;&lt;/script&gt;&lt;p&gt;Run it in the following way:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ chmod u+x lastpass2pass.py
+$ ./lastpass2pass.py my_passwords.csv
+&lt;/pre&gt;
+&lt;p&gt;And they are now imported into pass!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;, I have only written the script for my own needs on my own machine. I
+recommend you to go through the imported passwords to verify that they look as
+you expect. For example, count them (use &lt;tt class="docutils literal"&gt;pass | wc &lt;span class="pre"&gt;-l&lt;/span&gt;&lt;/tt&gt; to get a rough
+count), check the passwords' metadata if it's all there, check Unicode
+characters, check special characters in your passwords, etc. I don't guarantee
+anything, so I recommend you to read through the script and tweak it to your
+own taste.&lt;/p&gt;
+&lt;p&gt;Installing pass on Fedora is super easy:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo dnf install pass
+&lt;/pre&gt;
+&lt;p&gt;What took me some time to figure out is that pass relies on &lt;tt class="docutils literal"&gt;gpg2&lt;/tt&gt;, and
+&lt;strong&gt;not&lt;/strong&gt; &lt;tt class="docutils literal"&gt;gpg&lt;/tt&gt;. So you will need to create a key with &lt;tt class="docutils literal"&gt;gpg2 &lt;span class="pre"&gt;--gen-key&lt;/span&gt;&lt;/tt&gt;. Then
+get the key's ID:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ gpg2 --list-keys
+/home/matachi/.gnupg/pubring.kbx
+--------------------------------
+pub   rsa2048/79474561 2015-10-18
+uid         [ultimate] My name &amp;lt;email&amp;#64;example.com&amp;gt;
+sub   rsa2048/C623D74B 2015-10-18
+&lt;/pre&gt;
+&lt;p&gt;And init pass with the key ID:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ pass init 79474561
+&lt;/pre&gt;
+&lt;p&gt;Now look at &lt;a class="reference external" href="http://www.passwordstore.org/"&gt;http://www.passwordstore.org/&lt;/a&gt; and
+&lt;a class="reference external" href="http://git.zx2c4.com/password-store/about/"&gt;http://git.zx2c4.com/password-store/about/&lt;/a&gt; to a sense of what you can do
+with pass.&lt;/p&gt;
+</summary><category term="pass"></category><category term="passff"></category><category term="password manager"></category></entry><entry><title>Time to look for a LastPass alternative</title><link href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/" rel="alternate"></link><updated>2015-10-11T13:00:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-11:2015/10/11/time-to-look-for-a-lastpass-alternative/</id><summary type="html">&lt;p&gt;A couple of days ago LastPass &lt;a class="reference external" href="https://blog.lastpass.com/2015/10/lastpass-joins-logmein.html/"&gt;announced&lt;/a&gt; that they
 have been acquired by the company LogMeIn. Apparently their &lt;a class="reference external" href="https://investor.logmeininc.com/about-us/investors/news/press-release-details/2015/LogMeIn-to-Acquire-Password-Management-Leader-LastPass/default.aspx"&gt;long-term goal&lt;/a&gt;
 is to merge LastPass with &lt;a class="reference external" href="https://www.meldium.com/"&gt;Meldium&lt;/a&gt; which they
 acquired last year:&lt;/p&gt;
