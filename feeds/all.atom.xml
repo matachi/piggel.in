@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-19T11:20:00+02:00</updated><entry><title>Installed pass and passff</title><link href="http://piggel.in/2015/10/19/installed-pass-and-passff/" rel="alternate"></link><updated>2015-10-19T11:20:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-19:2015/10/19/installed-pass-and-passff/</id><summary type="html">&lt;p&gt;The other day &lt;a class="reference external" href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/"&gt;I wrote&lt;/a&gt; that I
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-29T15:30:00+01:00</updated><entry><title>CalDAV and CardDAV synchronization in Thunderbird</title><link href="http://piggel.in/2015/10/29/caldav-and-carddav-sync-in-thunderbird/" rel="alternate"></link><updated>2015-10-29T15:30:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-29:2015/10/29/caldav-and-carddav-sync-in-thunderbird/</id><summary type="html">&lt;p&gt;I have &lt;a class="reference external" href="https://apps.fedoraproject.org/packages/thunderbird"&gt;Thunderbird&lt;/a&gt;
+38.3.0 installed from Fedora's repository (&lt;tt class="docutils literal"&gt;# dnf install thunderbird&lt;/tt&gt;), and
+my plan is to use it more frequently in the future for my mail. I have one
+professional email account on &lt;a class="reference external" href="https://www.namecheap.com/hosting/email.aspx"&gt;Namecheap&lt;/a&gt; with my own domain address,
+one student email account on my university and one general email account on
+Gmail. The point with using Thunderbird would be to unify these three accounts
+into one program to make it more manageable.&lt;/p&gt;
+&lt;p&gt;One critical step for this to work is to get CardDAV integration in
+Thunderbird. I'm running a &lt;a class="reference external" href="https://www.digitalocean.com/"&gt;DigitalOcean&lt;/a&gt; VPS
+with CentOS 7 where I have &lt;a class="reference external" href="https://owncloud.org/"&gt;ownCloud&lt;/a&gt; installed, which
+I'm using for syncing files to my &lt;a class="reference external" href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&amp;amp;package=owncloud-client"&gt;computers&lt;/a&gt;
+and my &lt;a class="reference external" href="https://f-droid.org/repository/browse/?fdfilter=owncloud&amp;amp;fdid=com.owncloud.android"&gt;phone&lt;/a&gt;.
+However, I'm also using ownCloud as a CardDAV and CalDAV server for storing and
+syncing my contacts and scheduled calendar events.&lt;/p&gt;
+&lt;p&gt;On hover.com I found a very good and short &lt;a class="reference external" href="https://help.hover.com/entries/64466064-CalDAV-and-CardDAV-Synchronization-for-Thunderbird"&gt;guide&lt;/a&gt;
+(backed up to &lt;a class="footnote-reference" href="#id3" id="id1"&gt;[1]&lt;/a&gt; and &lt;a class="footnote-reference" href="#id4" id="id2"&gt;[2]&lt;/a&gt;) for how to get CalDAV and CardDAV synchronization
+through the Thunderbird extensions &lt;a class="reference external" href="https://addons.mozilla.org/en-US/thunderbird/addon/lightning/"&gt;Lightning&lt;/a&gt; and &lt;a class="reference external" href="http://www.sogo.nu/english/downloads/frontends.html"&gt;SOGo
+Connector&lt;/a&gt;. It worked
+great, and at a first glance the syncing seems to work flawlessly. Note though
+that it seems important to first set up CalDAV to be able to do the CardDAV
+synchronization.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://archive.is/TZfja"&gt;https://archive.is/TZfja&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://web.archive.org/web/20150910162914/https://help.hover.com/entries/64466064-CalDAV-and-CardDAV-Synchronization-for-Thunderbird"&gt;https://web.archive.org/web/20150910162914/https://help.hover.com/entries/64466064-CalDAV-and-CardDAV-Synchronization-for-Thunderbird&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</summary><category term="CalDAV"></category><category term="CardDAV"></category><category term="Thunderbird"></category><category term="mail"></category><category term="ownCloud"></category></entry><entry><title>Installed pass and passff</title><link href="http://piggel.in/2015/10/19/installed-pass-and-passff/" rel="alternate"></link><updated>2015-10-19T11:20:00+02:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-19:2015/10/19/installed-pass-and-passff/</id><summary type="html">&lt;p&gt;The other day &lt;a class="reference external" href="http://piggel.in/2015/10/11/time-to-look-for-a-lastpass-alternative/"&gt;I wrote&lt;/a&gt; that I
 were looking at LastPass alternatives. At that time I had given KeyPass a shot,
 but now I have had time to try &lt;a class="reference external" href="http://www.passwordstore.org/"&gt;pass&lt;/a&gt; and its
 Firefox extension &lt;a class="reference external" href="https://github.com/jvenant/passff"&gt;passff&lt;/a&gt;. Compared to
