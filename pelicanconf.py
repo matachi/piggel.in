@@ -44,7 +44,7 @@ AUTHOR_FEED_RSS = None
 
 DEFAULT_PAGINATION = False
 
-THEME = 'pelican-piggelin'
+THEME = 'pelican-piggelin/dist'
 DISPLAY_CATEGORIES_ON_MENU = False
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 DIRECT_TEMPLATES = ['index', 'authors', 'archives']
