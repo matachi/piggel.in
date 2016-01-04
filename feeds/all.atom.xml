@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2015-10-29T15:30:00+01:00</updated><entry><title>CalDAV and CardDAV synchronization in Thunderbird</title><link href="http://piggel.in/2015/10/29/caldav-and-carddav-sync-in-thunderbird/" rel="alternate"></link><updated>2015-10-29T15:30:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-29:2015/10/29/caldav-and-carddav-sync-in-thunderbird/</id><summary type="html">&lt;p&gt;I have &lt;a class="reference external" href="https://apps.fedoraproject.org/packages/thunderbird"&gt;Thunderbird&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2016-01-04T16:00:00+01:00</updated><entry><title>Update BIOS/UEFI on ThinkPad T440 running Linux</title><link href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/" rel="alternate"></link><updated>2016-01-04T16:00:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2016-01-04:2016/01/04/update-thinkpad-t440-uefi/</id><summary type="html">&lt;p&gt;I have a ThinkPad T440 with only Fedora installed. The UEFI-version I had
+installed was version 2.32, which I installed almost a year ago. Since then
+several new versions have been released, where 2.36 is the very latest when
+typing this. The following steps are what I did to update the UEFI/BIOS on my
+laptop.&lt;/p&gt;
+&lt;p&gt;Be warned though, you might brick the computer and/or void its warranty. This
+worked for me, but I cannot guarantee it will work for you.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Visit Lenovo's &lt;a class="reference external" href="http://support.lenovo.com/uu/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t440?tabName=downloads"&gt;support page&lt;/a&gt;
+and download &amp;quot;BIOS Update Bootable CD.&amp;quot; In my case, with 2.36, it is called
+&lt;tt class="docutils literal"&gt;gjuj23us.iso&lt;/tt&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Download &lt;a class="reference external" href="http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl"&gt;geteltorito.pl&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ wget http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Extract from the .iso-file a USB compatible image:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ perl geteltorito.pl -o bios.iso gjuj23us.iso
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Write the image to your USB stick:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo dd if=bios.iso of=/dev/sdX bs=512K
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; Be very careful with what drive you write to, i.e. sd&lt;strong&gt;X&lt;/strong&gt;!
+It will completely overwrite all partitions on that media, so make sure it
+is not your OS, backup HDD, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Now reboot the computer, press F12 at startup and choose to boot the USB
+stick. You will now enter the UEFI/BIOS updater. Follow its instructions and
+read the information pages carefully.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Done!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Visit &lt;a class="reference external" href="http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk"&gt;this&lt;/a&gt;
+page and &lt;a class="reference external" href="http://mattoncloud.org/2014/05/15/fedora-20-on-a-thinkpad-x1-carbon/"&gt;this&lt;/a&gt; page
+for additional information. Those are the two sources I used.&lt;/p&gt;
+</summary><category term="ThinkPad"></category><category term="Linux"></category><category term="UEFI"></category></entry><entry><title>CalDAV and CardDAV synchronization in Thunderbird</title><link href="http://piggel.in/2015/10/29/caldav-and-carddav-sync-in-thunderbird/" rel="alternate"></link><updated>2015-10-29T15:30:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2015-10-29:2015/10/29/caldav-and-carddav-sync-in-thunderbird/</id><summary type="html">&lt;p&gt;I have &lt;a class="reference external" href="https://apps.fedoraproject.org/packages/thunderbird"&gt;Thunderbird&lt;/a&gt;
 38.3.0 installed from Fedora's repository (&lt;tt class="docutils literal"&gt;# dnf install thunderbird&lt;/tt&gt;), and
 my plan is to use it more frequently in the future for my mail. I have one
 professional email account on &lt;a class="reference external" href="https://www.namecheap.com/hosting/email.aspx"&gt;Namecheap&lt;/a&gt; with my own domain address,
