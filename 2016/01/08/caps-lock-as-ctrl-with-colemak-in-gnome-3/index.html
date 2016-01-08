@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="http://piggel.in/theme/img/favicon.ico">
+
+    <title>How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way</title>
+
+    <link rel="stylesheet" href="http://piggel.in/theme/css/main.css" />
+    <link href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
+
+    <link href="http://piggel.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Piggel.in Atom Feed" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light" role="banner">
+      <div class="container">
+        <div class="brand-icon-container">
+          <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar">
+            &#9776;
+          </button>
+          <a class="navbar-brand" href="http://piggel.in/">Piggel.in</a>
+        </div>
+        <div class="collapse navbar-toggleable-xs" id="navbar">
+          <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://piggel.in">English</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://piggel.in/sv">Swedish</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/archives.html">Articles</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://piggel.in/about/">About</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content container">
+  <article>
+    <header>
+      <h1>
+        <a href="http://piggel.in/2016/01/08/caps-lock-as-ctrl-with-colemak-in-gnome-3/" rel="bookmark" title="Permalink to How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way">How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way</a>
+      </h1>
+    </header>
+    <div class="entry-content">
+<footer class="post-info">
+  <abbr class="published" title="2016-01-08T15:00:00+01:00">
+    Published: 2016-01-08
+  </abbr>
+    <address class="vcard author">
+      Written by:         <a class="url fn" href="http://piggel.in/author/daniel-jonsson.html">Daniel Jonsson</a>
+    </address>
+<p>Tags: <a href="http://piggel.in/tag/linux.html">Linux</a>, <a href="http://piggel.in/tag/gnome.html">Gnome</a>, <a href="http://piggel.in/tag/colemak.html">Colemak</a>, <a href="http://piggel.in/tag/ctrl.html">Ctrl</a></p></footer>      <p>The keyboard layout Colemak comes built-in on all Linux distributions I have
+tried, making it easy for me as a Colemak user to settle in. The only thing I
+change with regards to the keyboard layout is the position of the Ctrl key,
+which is placed in the same place as in Qwerty. I am used to have it where the
+Caps Lock is located, making it more reachable which I find very appealing
+being a Vim and terminal user.</p>
+<p>Colemak made Caps Lock act as an additional Backspace key. I agree that it is
+more useful than Caps Lock, however, in Vim and in Bash there are so many ways
+to delete text that leaving the home row is seldom necessary. To set the Caps
+Lock key to act as Ctrl, we first need to install Gnome Tweak Tool:</p>
+<pre class="literal-block">
+$ sudo dnf install gnome-tweak-tool
+</pre>
+<p>Next, open Gnome Tweak Tool and select <em>Typing</em> from the sidebar.</p>
+<p>Here there are several ways to make Caps Lock to act as Ctrl. However, through
+my time as a Colemak user, I have discovered that a couple of those options are
+faulty.</p>
+<ul>
+<li><p class="first"><strong>Caps Lock key behavior &gt; Make Caps Lock an additional Ctrl</strong>.</p>
+<p>This option causes strange behaviors in PyCharm. Try to edit your keymap by
+adding a keyboard shortcut to any action. When pressing down Caps Lock it
+appears as <tt class="docutils literal">Caps Lock</tt>; then press down an additional key, for instance A,
+and it appears as <tt class="docutils literal">Ctrl + A</tt>.</p>
+<p>I believe this is the cause of some strange behavior with the Switcher, which
+is trigged by pressing <tt class="docutils literal">Ctrl + Tab</tt>. When releasing the keys the Switcher
+is not closed.  Instead you have to press <tt class="docutils literal">Enter</tt> to confirm the tab
+switch, which is really annoying.</p>
+</li>
+<li><p class="first"><strong>Ctrl key position &gt; Swap Ctrl and Caps Lock</strong>.</p>
+<p>This option causes problems in Gnome Terminal. When pressing <tt class="docutils literal">Ctrl +
+Shift</tt>, which is required when for instance pasting text with <tt class="docutils literal">Ctrl + Shift
++ V</tt>, the letter in front of the cursor is deleted. I guess that Colemak's
+original behavior for the Caps Lock key, i.e. Backspace, takes precedence for
+a moment.</p>
+</li>
+<li><p class="first"><strong>Ctrl key position &gt; Caps Lock as Ctrl</strong>.</p>
+<p>This option works fine in both PyCharm and Gnome Terminal.</p>
+</li>
+</ul>
+<p>Please share your own experiences if you are one of the minority with this
+fringe setup. Sadly I do not (yet) have a comment field on this blog, but I can
+be reached on Twitter at <a class="reference external" href="https://twitter.com/DanielJonss">&#64;DanielJonss</a>.</p>
+
+    </div>
+  </article>
+    </div>
+    <footer class="footer text-muted">
+      <div class="container">
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a>.
+        Theme <a href="https://github.com/matachi/pelican-piggelin">Piggelin</a>.
+        <a href="http://piggel.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">Atom feed</a>.
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  </body>
+</html>

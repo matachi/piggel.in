@@ -50,8 +50,65 @@
           <aside id="featured" class="body">
             <article>
               <h1 class="entry-title">
-                <a href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/" rel="bookmark" title="Permalink to Update BIOS/UEFI on ThinkPad T440 running Linux">Update BIOS/UEFI on ThinkPad T440 running Linux</a>
+                <a href="http://piggel.in/2016/01/08/caps-lock-as-ctrl-with-colemak-in-gnome-3/" rel="bookmark" title="Permalink to How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way">How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way</a>
               </h1>
+<footer class="post-info">
+  <abbr class="published" title="2016-01-08T15:00:00+01:00">
+    Published: 2016-01-08
+  </abbr>
+    <address class="vcard author">
+      Written by:         <a class="url fn" href="http://piggel.in/author/daniel-jonsson.html">Daniel Jonsson</a>
+    </address>
+<p>Tags: <a href="http://piggel.in/tag/linux.html">Linux</a>, <a href="http://piggel.in/tag/gnome.html">Gnome</a>, <a href="http://piggel.in/tag/colemak.html">Colemak</a>, <a href="http://piggel.in/tag/ctrl.html">Ctrl</a></p></footer>              <p>The keyboard layout Colemak comes built-in on all Linux distributions I have
+tried, making it easy for me as a Colemak user to settle in. The only thing I
+change with regards to the keyboard layout is the position of the Ctrl key,
+which is placed in the same place as in Qwerty. I am used to have it where the
+Caps Lock is located, making it more reachable which I find very appealing
+being a Vim and terminal user.</p>
+<p>Colemak made Caps Lock act as an additional Backspace key. I agree that it is
+more useful than Caps Lock, however, in Vim and in Bash there are so many ways
+to delete text that leaving the home row is seldom necessary. To set the Caps
+Lock key to act as Ctrl, we first need to install Gnome Tweak Tool:</p>
+<pre class="literal-block">
+$ sudo dnf install gnome-tweak-tool
+</pre>
+<p>Next, open Gnome Tweak Tool and select <em>Typing</em> from the sidebar.</p>
+<p>Here there are several ways to make Caps Lock to act as Ctrl. However, through
+my time as a Colemak user, I have discovered that a couple of those options are
+faulty.</p>
+<ul>
+<li><p class="first"><strong>Caps Lock key behavior &gt; Make Caps Lock an additional Ctrl</strong>.</p>
+<p>This option causes strange behaviors in PyCharm. Try to edit your keymap by
+adding a keyboard shortcut to any action. When pressing down Caps Lock it
+appears as <tt class="docutils literal">Caps Lock</tt>; then press down an additional key, for instance A,
+and it appears as <tt class="docutils literal">Ctrl + A</tt>.</p>
+<p>I believe this is the cause of some strange behavior with the Switcher, which
+is trigged by pressing <tt class="docutils literal">Ctrl + Tab</tt>. When releasing the keys the Switcher
+is not closed.  Instead you have to press <tt class="docutils literal">Enter</tt> to confirm the tab
+switch, which is really annoying.</p>
+</li>
+<li><p class="first"><strong>Ctrl key position &gt; Swap Ctrl and Caps Lock</strong>.</p>
+<p>This option causes problems in Gnome Terminal. When pressing <tt class="docutils literal">Ctrl +
+Shift</tt>, which is required when for instance pasting text with <tt class="docutils literal">Ctrl + Shift
++ V</tt>, the letter in front of the cursor is deleted. I guess that Colemak's
+original behavior for the Caps Lock key, i.e. Backspace, takes precedence for
+a moment.</p>
+</li>
+<li><p class="first"><strong>Ctrl key position &gt; Caps Lock as Ctrl</strong>.</p>
+<p>This option works fine in both PyCharm and Gnome Terminal.</p>
+</li>
+</ul>
+<p>Please share your own experiences if you are one of the minority with this
+fringe setup. Sadly I do not (yet) have a comment field on this blog, but I can
+be reached on Twitter at <a class="reference external" href="https://twitter.com/DanielJonss">&#64;DanielJonss</a>.</p>
+
+            </article>
+          </aside>
+
+          <article>
+            <h1 class="entry-title">
+              <a href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/" rel="bookmark" title="Permalink to Update BIOS/UEFI on ThinkPad T440 running Linux">Update BIOS/UEFI on ThinkPad T440 running Linux</a>
+            </h1>
 <footer class="post-info">
   <abbr class="published" title="2016-01-04T16:00:00+01:00">
     Published: 2016-01-04
@@ -59,49 +116,12 @@
     <address class="vcard author">
       Written by:         <a class="url fn" href="http://piggel.in/author/daniel-jonsson.html">Daniel Jonsson</a>
     </address>
-<p>Tags: <a href="http://piggel.in/tag/thinkpad.html">ThinkPad</a>, <a href="http://piggel.in/tag/linux.html">Linux</a>, <a href="http://piggel.in/tag/uefi.html">UEFI</a></p></footer>              <p>I have a ThinkPad T440 with only Fedora installed. The UEFI-version I had
+<p>Tags: <a href="http://piggel.in/tag/thinkpad.html">ThinkPad</a>, <a href="http://piggel.in/tag/linux.html">Linux</a>, <a href="http://piggel.in/tag/uefi.html">UEFI</a></p></footer>            <p>I have a ThinkPad T440 with only Fedora installed. The UEFI-version I had
 installed was version 2.32, which I installed almost a year ago. Since then
 several new versions have been released, where 2.36 is the very latest when
-typing this. The following steps are what I did to update the UEFI/BIOS on my
-laptop.</p>
-<p>Be warned though, you might brick the computer and/or void its warranty. This
-worked for me, but I cannot guarantee it will work for you.</p>
-<ol class="arabic">
-<li><p class="first">Visit Lenovo's <a class="reference external" href="http://support.lenovo.com/uu/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t440?tabName=downloads">support page</a>
-and download &quot;BIOS Update Bootable CD.&quot; In my case, with 2.36, it is called
-<tt class="docutils literal">gjuj23us.iso</tt>.</p>
-</li>
-<li><p class="first">Download <a class="reference external" href="http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl">geteltorito.pl</a>:</p>
-<pre class="literal-block">
-$ wget http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl
-</pre>
-</li>
-<li><p class="first">Extract from the .iso-file a USB compatible image:</p>
-<pre class="literal-block">
-$ perl geteltorito.pl -o bios.iso gjuj23us.iso
-</pre>
-</li>
-<li><p class="first">Write the image to your USB stick:</p>
-<pre class="literal-block">
-$ sudo dd if=bios.iso of=/dev/sdX bs=512K
-</pre>
-<p><strong>WARNING!</strong> Be very careful with what drive you write to, i.e. sd<strong>X</strong>!
-It will completely overwrite all partitions on that media, so make sure it
-is not your OS, backup HDD, etc.</p>
-</li>
-<li><p class="first">Now reboot the computer, press F12 at startup and choose to boot the USB
-stick. You will now enter the UEFI/BIOS updater. Follow its instructions and
-read the information pages carefully.</p>
-</li>
-<li><p class="first">Done!</p>
-</li>
-</ol>
-<p>Visit <a class="reference external" href="http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk">this</a>
-page and <a class="reference external" href="http://mattoncloud.org/2014/05/15/fedora-20-on-a-thinkpad-x1-carbon/">this</a> page
-for additional information. Those are the two sources I used.</p>
-
-            </article>
-          </aside>
+typing this. The following steps are what I did ...</p>
+            <a class="readmore" href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/">Read more »</a>
+          </article>
 
           <article>
             <h1 class="entry-title">

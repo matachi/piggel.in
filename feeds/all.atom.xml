@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2016-01-04T16:00:00+01:00</updated><entry><title>Update BIOS/UEFI on ThinkPad T440 running Linux</title><link href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/" rel="alternate"></link><updated>2016-01-04T16:00:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2016-01-04:2016/01/04/update-thinkpad-t440-uefi/</id><summary type="html">&lt;p&gt;I have a ThinkPad T440 with only Fedora installed. The UEFI-version I had
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Piggel.in</title><link href="http://piggel.in/" rel="alternate"></link><link href="http://piggel.in/feeds/all.atom.xml" rel="self"></link><id>http://piggel.in/</id><updated>2016-01-08T15:00:00+01:00</updated><entry><title>How to set Caps Lock as Ctrl with Colemak keyboard layout in Gnome 3—the correct way</title><link href="http://piggel.in/2016/01/08/caps-lock-as-ctrl-with-colemak-in-gnome-3/" rel="alternate"></link><updated>2016-01-08T15:00:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2016-01-08:2016/01/08/caps-lock-as-ctrl-with-colemak-in-gnome-3/</id><summary type="html">&lt;p&gt;The keyboard layout Colemak comes built-in on all Linux distributions I have
+tried, making it easy for me as a Colemak user to settle in. The only thing I
+change with regards to the keyboard layout is the position of the Ctrl key,
+which is placed in the same place as in Qwerty. I am used to have it where the
+Caps Lock is located, making it more reachable which I find very appealing
+being a Vim and terminal user.&lt;/p&gt;
+&lt;p&gt;Colemak made Caps Lock act as an additional Backspace key. I agree that it is
+more useful than Caps Lock, however, in Vim and in Bash there are so many ways
+to delete text that leaving the home row is seldom necessary. To set the Caps
+Lock key to act as Ctrl, we first need to install Gnome Tweak Tool:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo dnf install gnome-tweak-tool
+&lt;/pre&gt;
+&lt;p&gt;Next, open Gnome Tweak Tool and select &lt;em&gt;Typing&lt;/em&gt; from the sidebar.&lt;/p&gt;
+&lt;p&gt;Here there are several ways to make Caps Lock to act as Ctrl. However, through
+my time as a Colemak user, I have discovered that a couple of those options are
+faulty.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;Caps Lock key behavior &amp;gt; Make Caps Lock an additional Ctrl&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This option causes strange behaviors in PyCharm. Try to edit your keymap by
+adding a keyboard shortcut to any action. When pressing down Caps Lock it
+appears as &lt;tt class="docutils literal"&gt;Caps Lock&lt;/tt&gt;; then press down an additional key, for instance A,
+and it appears as &lt;tt class="docutils literal"&gt;Ctrl + A&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;I believe this is the cause of some strange behavior with the Switcher, which
+is trigged by pressing &lt;tt class="docutils literal"&gt;Ctrl + Tab&lt;/tt&gt;. When releasing the keys the Switcher
+is not closed.  Instead you have to press &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; to confirm the tab
+switch, which is really annoying.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;Ctrl key position &amp;gt; Swap Ctrl and Caps Lock&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This option causes problems in Gnome Terminal. When pressing &lt;tt class="docutils literal"&gt;Ctrl +
+Shift&lt;/tt&gt;, which is required when for instance pasting text with &lt;tt class="docutils literal"&gt;Ctrl + Shift
++ V&lt;/tt&gt;, the letter in front of the cursor is deleted. I guess that Colemak's
+original behavior for the Caps Lock key, i.e. Backspace, takes precedence for
+a moment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;strong&gt;Ctrl key position &amp;gt; Caps Lock as Ctrl&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This option works fine in both PyCharm and Gnome Terminal.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please share your own experiences if you are one of the minority with this
+fringe setup. Sadly I do not (yet) have a comment field on this blog, but I can
+be reached on Twitter at &lt;a class="reference external" href="https://twitter.com/DanielJonss"&gt;&amp;#64;DanielJonss&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="Linux"></category><category term="Gnome"></category><category term="Colemak"></category><category term="Ctrl"></category></entry><entry><title>Update BIOS/UEFI on ThinkPad T440 running Linux</title><link href="http://piggel.in/2016/01/04/update-thinkpad-t440-uefi/" rel="alternate"></link><updated>2016-01-04T16:00:00+01:00</updated><author><name>Daniel Jonsson</name></author><id>tag:piggel.in,2016-01-04:2016/01/04/update-thinkpad-t440-uefi/</id><summary type="html">&lt;p&gt;I have a ThinkPad T440 with only Fedora installed. The UEFI-version I had
 installed was version 2.32, which I installed almost a year ago. Since then
 several new versions have been released, where 2.36 is the very latest when
 typing this. The following steps are what I did to update the UEFI/BIOS on my
